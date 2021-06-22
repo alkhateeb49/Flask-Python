@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Home Page</h1>
+<h2>{{data['name']}}</h2>
+<h2>{{data['email']}}</h2>
+{% if not data %}
+<a href="/form">Form</a>
+{% else %}
+<a href="/unsetdata">Remove data</a>
+<br>
+<a href="/user/{{data['name']}}/{{data['email']}}">HTTP GET</a>
+{% endif %}
+</body>
+</html>
