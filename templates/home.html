@@ -13,7 +13,7 @@
 {% else %}
 <a href="/unsetdata">Remove data</a>
 <br>
-<a href="/user/{{data['name']}}/{{data['email']}}">HTTP GET</a>
+<a href="/user/name={{data['name']}}&email={{data['email']}}">HTTP GET</a>
 {% endif %}
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, Markup
 
 app = Flask(__name__)
 
@@ -29,12 +29,12 @@ def unsetData():
 
 # @app.route('/user/name1=<value1>&name2=<value2>')
 @app.route('/user/')
-@app.route('/user/<value1>/')
-@app.route('/user/<value1>/<value2>')
+@app.route('/user/<value1>')
+@app.route('/user/name=<value1>&email=<value2>')
 def profile(value1=None, value2=None):
     if value1 != None and value2 != None:
         # return f'{username}\'s profile'
-        return value1 + ' ' + value2+' profile'
+        return value1 + ' ' + value2+' profile' + Markup('<br><a href="/">Home</a>')
     return redirect(url_for('home'))
 
 
