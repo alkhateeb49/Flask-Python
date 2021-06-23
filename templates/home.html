@@ -11,6 +11,7 @@
 {% if not data %}
 <a href="/form">Form</a>
 {% else %}
+<h2>Data from session : {{session['username']}}</h2>
 <a href="/unsetdata">Remove data</a>
 <br>
 <a href="/user/name={{data['name']}}&email={{data['email']}}">HTTP GET</a>
